@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="BcwokyN2W4FMCCIj4YbvGcFCJojtQgojttCnNHCTtL4" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คิดเปอร์เซ็นต์ออนไลน์</title>
+<meta name="description" content="คิดเปอร์เซ็นต์ออนไลน์ฟรี X คือกี่ % ของ Y คิดเปอร์เซ็นต์การเพิ่มลด และคำนวณกำไรขาดทุน ใช้งานง่าย ไม่ต้องโหลดแอป">
+<meta name="keywords" content="คิดเปอร์เซ็นต์, คำนวณเปอร์เซ็นต์, กี่เปอร์เซ็นต์, คำนวณกำไร, เพิ่มลดกี่เปอร์เซ็นต์">
+<meta property="og:title" content="คิดเปอร์เซ็นต์ออนไลน์">
+<meta property="og:description" content="คิดเปอร์เซ็นต์ออนไลน์ฟรี คิดส่วนลด บวก VAT คำนวณกำไรขาดทุน ใช้งานง่าย ไม่ต้องโหลดแอป">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://kamnuanpercent.com/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Google AdSense -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#FFFFFF; --bg2:#F7F7F5; --bg3:#F0EFEC;
+  --border:#E4E4E0; --border2:#D4D4CF;
+  --text:#1A1917; --text2:#706F6B; --text3:#B0AFA9;
+  --ink:#1A1917; --accent:#2563EB;
+}
+html { scroll-behavior:smooth; }
+body { font-family:'Sarabun',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased; }
+
+header { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--border); height:52px; display:flex; align-items:center; padding:0 24px; }
+.logo { font-family:'Noto Serif Thai',serif; font-size:20px; font-weight:700; color:var(--ink); }
+
+.ad-strip { background:var(--bg2); border-bottom:1px solid var(--border); display:flex; justify-content:center; padding:8px 16px; }
+.ad-728 { width:100%; max-width:728px; height:90px; background:var(--bg); border:1.5px dashed var(--border2); border-radius:4px; display:flex; align-items:center; justify-content:center; color:var(--text3); font-size:12px; }
+@media(max-width:600px){.ad-728{height:60px;}}
+.ad-mid { display:flex; justify-content:center; margin:28px 0; }
+
+.page-wrap { max-width:640px; margin:0 auto; padding:40px 20px 64px; }
+.page-heading { margin-bottom:28px; }
+.page-heading h1 { font-family:'Noto Serif Thai',serif; font-size:clamp(32px,7vw,48px); font-weight:700; color:var(--ink); line-height:1.15; letter-spacing:-0.8px; }
+.page-heading p { margin-top:8px; font-size:15px; color:var(--text2); }
+
+/* Type tabs */
+.type-tabs { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px; }
+.type-tabs-2 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:24px; }
+.type-tab { padding:10px 6px; border:1.5px solid var(--border); border-radius:9px; background:var(--bg); font-family:'Sarabun',sans-serif; font-size:14px; font-weight:600; color:var(--text2); cursor:pointer; text-align:center; transition:all .15s; line-height:1.4; }
+.type-tab.active { border-color:var(--ink); background:var(--ink); color:#fff; }
+.type-tab:hover:not(.active) { border-color:var(--border2); }
+
+.field-label { font-size:13px; font-weight:600; color:var(--text2); letter-spacing:0.3px; margin-bottom:8px; display:block; }
+hr.section-hr { border:none; border-top:1px solid var(--border); margin:20px 0; }
+
+/* Input */
+.input-wrap { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:8px; overflow:hidden; background:var(--bg); transition:border-color .15s,box-shadow .15s; margin-bottom:12px; }
+.input-wrap:focus-within { border-color:var(--accent); box-shadow:0 0 0 3px rgba(37,99,235,0.1); }
+.input-wrap input { flex:1; padding:11px 14px; border:none; outline:none; font-family:'Sarabun',sans-serif; font-size:20px; font-weight:600; color:var(--ink); background:transparent; width:100%; }
+.input-wrap input::placeholder { color:var(--text3); font-weight:400; font-size:15px; }
+.input-suffix { padding:0 14px; font-size:14px; font-weight:600; color:var(--text3); border-left:1px solid var(--border); background:var(--bg2); min-height:46px; display:flex; align-items:center; }
+
+/* Calc panel */
+.calc-panel { display:none; }
+.calc-panel.active { display:block; }
+
+/* Button */
+.btn-calc { width:100%; margin-top:4px; padding:13px; background:var(--ink); color:#fff; border:none; border-radius:9px; font-family:'Sarabun',sans-serif; font-size:15px; font-weight:600; cursor:pointer; transition:opacity .15s,transform .1s; }
+.btn-calc:hover { opacity:0.85; }
+.btn-calc:active { transform:scale(0.99); }
+
+/* Result */
+.result-box { display:none; margin-top:20px; animation:fadeUp .3s ease; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);} }
+
+.result-main { padding:24px 0 20px; border-top:1.5px solid var(--border); border-bottom:1.5px solid var(--border); margin-bottom:16px; }
+.result-label { font-size:12px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; color:var(--text3); margin-bottom:6px; }
+.result-num { font-family:'Noto Serif Thai',serif; font-size:clamp(52px,13vw,80px); font-weight:700; color:var(--ink); line-height:1; letter-spacing:-2px; }
+.result-unit { font-family:'Noto Serif Thai',serif; font-size:22px; font-weight:400; color:var(--text2); margin-left:6px; vertical-align:bottom; display:inline-block; margin-bottom:6px; }
+.result-detail { font-size:15px; color:var(--text2); margin-top:10px; }
+.result-detail strong { color:var(--ink); font-weight:600; }
+
+/* Stats row */
+.stats-row { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1.5px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:12px; }
+.stat-cell { background:var(--bg); padding:16px; text-align:center; }
+.stat-num { font-family:'Noto Serif Thai',serif; font-size:22px; font-weight:700; color:var(--ink); letter-spacing:-0.5px; }
+.stat-label { font-size:12px; color:var(--text3); margin-top:3px; }
+
+.btn-share { width:100%; padding:12px; background:transparent; border:1.5px solid var(--border); border-radius:9px; font-family:'Sarabun',sans-serif; font-size:14px; color:var(--text2); cursor:pointer; margin-bottom:12px; display:flex; align-items:center; justify-content:center; gap:8px; transition:all .15s; }
+.btn-share:hover { border-color:var(--ink); color:var(--ink); }
+
+.toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(80px); background:var(--ink); color:#fff; padding:10px 20px; border-radius:8px; font-size:14px; font-weight:500; transition:transform .3s ease; z-index:999; pointer-events:none; }
+.toast.show { transform:translateX(-50%) translateY(0); }
+
+.info-section { border-top:1px solid var(--border); padding-top:32px; }
+.info-section h2 { font-family:'Noto Serif Thai',serif; font-size:18px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+.info-section h2.mt { margin-top:24px; }
+.info-section p { font-size:14px; color:var(--text2); line-height:1.85; }
+
+footer { border-top:1px solid var(--border); padding:24px 20px; text-align:center; font-size:13px; color:var(--text3); }
+footer a { color:var(--text3); text-decoration:none; }
+footer a:hover { color:var(--text2); text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header><span class="logo">คิดเปอร์เซ็นต์</span></header>
+
+<div class="ad-strip">
+  <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (Top)</div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="page-heading">
+    <h1>คิดเปอร์เซ็นต์</h1>
+    <p>เลือกสูตรที่ต้องการ กรอกตัวเลข รู้ผลทันที</p>
+  </div>
+
+  <!-- Type tabs -->
+  <div class="type-tabs-2">
+    <button class="type-tab active" onclick="switchType('whatpct')">X คือกี่ % ของ Y</button>
+    <button class="type-tab" onclick="switchType('change')">เพิ่ม/ลดไปกี่ %</button>
+    <button class="type-tab" onclick="switchType('profit')">กำไร / ขาดทุน</button>
+  </div>
+
+  <!-- ── Panel 1: X คือกี่ % ของ Y ── -->
+  <div class="calc-panel active" id="panel-whatpct">
+    <span class="field-label">ตัวเลขที่อยากรู้ว่าคือกี่ % (X)</span>
+    <div class="input-wrap">
+      <input type="number" id="w-x" placeholder="เช่น 30" min="0" inputmode="decimal">
+      <span class="input-suffix">ค่า</span>
+    </div>
+    <span class="field-label">จากทั้งหมด (Y)</span>
+    <div class="input-wrap">
+      <input type="number" id="w-y" placeholder="เช่น 200" min="0" inputmode="decimal">
+      <span class="input-suffix">ค่า</span>
+    </div>
+    <p style="font-size:13px; color:var(--text3); margin-bottom:12px;">ตัวอย่าง: ได้คะแนน 30 จาก 200 คะแนนเต็ม คือกี่ %</p>
+    <button class="btn-calc" onclick="calcWhatPct()">คำนวณ</button>
+
+    <div class="result-box" id="res-whatpct">
+      <div class="result-main">
+        <div class="result-label">X คิดเป็นกี่เปอร์เซ็นต์ของ Y</div>
+        <div>
+          <span class="result-num" id="w-result">–</span>
+          <span class="result-unit">%</span>
+        </div>
+        <div class="result-detail" id="w-detail"></div>
+      </div>
+      <button class="btn-share" onclick="copyResult('whatpct')">📋 คัดลอกผลลัพธ์</button>
+    </div>
+  </div>
+
+  <!-- ── Panel 2: เพิ่ม/ลดไปกี่ % ── -->
+  <div class="calc-panel" id="panel-change">
+    <span class="field-label">ตัวเลขเดิม (ก่อน)</span>
+    <div class="input-wrap">
+      <input type="number" id="c-old" placeholder="เช่น 100" inputmode="decimal">
+      <span class="input-suffix">ค่า</span>
+    </div>
+    <span class="field-label">ตัวเลขใหม่ (หลัง)</span>
+    <div class="input-wrap">
+      <input type="number" id="c-new" placeholder="เช่น 130" inputmode="decimal">
+      <span class="input-suffix">ค่า</span>
+    </div>
+    <p style="font-size:13px; color:var(--text3); margin-bottom:12px;">ตัวอย่าง: ราคาเดิม 100 บาท ขึ้นมาเป็น 130 บาท เพิ่มขึ้นกี่ %</p>
+    <button class="btn-calc" onclick="calcChange()">คำนวณ</button>
+
+    <div class="result-box" id="res-change">
+      <div class="result-main">
+        <div class="result-label">เปลี่ยนแปลงไป</div>
+        <div>
+          <span class="result-num" id="c-result">–</span>
+          <span class="result-unit">%</span>
+        </div>
+        <div class="result-detail" id="c-detail"></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-cell">
+          <div class="stat-num" id="c-diff">–</div>
+          <div class="stat-label">ผลต่าง</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" id="c-direction">–</div>
+          <div class="stat-label">ทิศทาง</div>
+        </div>
+      </div>
+      <button class="btn-share" onclick="copyResult('change')">📋 คัดลอกผลลัพธ์</button>
+    </div>
+  </div>
+
+  <!-- ── Panel 3: กำไร/ขาดทุน ── -->
+  <div class="calc-panel" id="panel-profit">
+    <span class="field-label">ต้นทุน (ราคาที่ซื้อมา)</span>
+    <div class="input-wrap">
+      <input type="number" id="p-cost" placeholder="เช่น 500" min="0" inputmode="decimal">
+      <span class="input-suffix">บาท</span>
+    </div>
+    <span class="field-label">ราคาขาย</span>
+    <div class="input-wrap">
+      <input type="number" id="p-sell" placeholder="เช่น 750" min="0" inputmode="decimal">
+      <span class="input-suffix">บาท</span>
+    </div>
+    <p style="font-size:13px; color:var(--text3); margin-bottom:12px;">ตัวอย่าง: ซื้อมา 500 บาท ขาย 750 บาท กำไรกี่ %</p>
+    <button class="btn-calc" onclick="calcProfit()">คำนวณ</button>
+
+    <div class="result-box" id="res-profit">
+      <div class="result-main">
+        <div class="result-label" id="p-label">กำไร</div>
+        <div>
+          <span class="result-num" id="p-pct">–</span>
+          <span class="result-unit">%</span>
+        </div>
+        <div class="result-detail" id="p-detail"></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-cell">
+          <div class="stat-num" id="p-amount">–</div>
+          <div class="stat-label" id="p-amount-label">กำไร (บาท)</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" id="p-margin">–</div>
+          <div class="stat-label">Gross Margin</div>
+        </div>
+      </div>
+      <button class="btn-share" onclick="copyResult('profit')">📋 คัดลอกผลลัพธ์</button>
+    </div>
+  </div>
+
+  <div class="ad-mid">
+    <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (In-content)</div>
+  </div>
+
+  <div class="info-section">
+    <h2>วิธีใช้เครื่องคิดเปอร์เซ็นต์</h2>
+    <p>เลือกสูตรที่ต้องการด้านบน แล้วกรอกตัวเลขในช่องที่กำหนด กดคำนวณเพื่อดูผลลัพธ์ทันที รองรับ 3 สูตร ได้แก่ X คือกี่ % ของ Y, เพิ่ม/ลดไปกี่ % และกำไร/ขาดทุน</p>
+    <h2 class="mt">ตัวอย่างการใช้งาน</h2>
+    <p>X คือกี่ % ของ Y — ใช้คิดคะแนนสอบ ยอดขาย หรือสัดส่วนต่างๆ · เพิ่ม/ลดไปกี่ % — ใช้ดูว่าราคาหรือตัวเลขเปลี่ยนไปเท่าไหร่ · กำไร/ขาดทุน — ใช้คำนวณกำไรจากการซื้อขายสินค้า</p>
+  </div>
+
+  <div class="ad-mid" style="margin-bottom:0;">
+    <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (Bottom)</div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2568 คิดเปอร์เซ็นต์ออนไลน์ · <a href="#">นโยบายความเป็นส่วนตัว</a> · <a href="#">ติดต่อ</a></p>
+  <p style="margin-top:4px;">ผลลัพธ์เป็นการคำนวณทางคณิตศาสตร์ ควรตรวจสอบกับผู้เชี่ยวชาญสำหรับการตัดสินใจทางธุรกิจ</p>
+</footer>
+
+<div class="toast" id="toast">คัดลอกแล้ว!</div>
+
+<script>
+let activeType = 'whatpct';
+const TYPES = ['whatpct','change','profit'];
+
+function fmt(n) {
+  return parseFloat(n.toFixed(2)).toLocaleString('th-TH');
+}
+
+/* ── Switch type ── */
+function switchType(type) {
+  activeType = type;
+  document.querySelectorAll('.type-tab').forEach((btn, i) => {
+    btn.classList.toggle('active', btn.getAttribute('onclick').includes(type));
+  });
+  TYPES.forEach(t => {
+    document.getElementById('panel-' + t).classList.toggle('active', t === type);
+    const res = document.getElementById('res-' + t);
+    if (res) res.style.display = 'none';
+  });
+}
+
+/* ── 1. ส่วนลด ── */
+function calcDiscount() {
+  const price = parseFloat(document.getElementById('d-price').value);
+  const pct   = parseFloat(document.getElementById('d-pct').value);
+  if (!price || isNaN(pct)) { alert('กรุณากรอกข้อมูลให้ครบ'); return; }
+  const saved = price * pct / 100;
+  const final = price - saved;
+  document.getElementById('d-final').textContent    = fmt(final);
+  document.getElementById('d-saved').textContent    = fmt(saved);
+  document.getElementById('d-pct-show').textContent = fmt(pct) + '%';
+  show('res-discount');
+}
+
+/* ── 2. VAT ── */
+function calcVat() {
+  const price = parseFloat(document.getElementById('v-price').value);
+  const rate  = parseFloat(document.getElementById('v-rate').value) || 7;
+  if (!price) { alert('กรุณากรอกราคาก่อน VAT'); return; }
+  const vatAmt = price * rate / 100;
+  const total  = price + vatAmt;
+  document.getElementById('v-total').textContent  = fmt(total);
+  document.getElementById('v-vatamt').textContent = fmt(vatAmt);
+  document.getElementById('v-before').textContent = fmt(price);
+  show('res-vat');
+}
+
+/* ── 3. X คือกี่ % ของ Y ── */
+function calcWhatPct() {
+  const x = parseFloat(document.getElementById('w-x').value);
+  const y = parseFloat(document.getElementById('w-y').value);
+  if (!x || !y) { alert('กรุณากรอกข้อมูลให้ครบ'); return; }
+  const result = (x / y) * 100;
+  document.getElementById('w-result').textContent = fmt(result);
+  document.getElementById('w-detail').innerHTML   = `<strong>${fmt(x)}</strong> คิดเป็น <strong>${fmt(result)}%</strong> ของ <strong>${fmt(y)}</strong>`;
+  show('res-whatpct');
+}
+
+/* ── 4. % การเปลี่ยนแปลง ── */
+function calcChange() {
+  const oldVal = parseFloat(document.getElementById('c-old').value);
+  const newVal = parseFloat(document.getElementById('c-new').value);
+  if (isNaN(oldVal) || isNaN(newVal) || oldVal === 0) { alert('กรุณากรอกข้อมูลให้ครบ'); return; }
+  const diff   = newVal - oldVal;
+  const pct    = (diff / Math.abs(oldVal)) * 100;
+  const up     = pct >= 0;
+  document.getElementById('c-result').textContent    = (up ? '+' : '') + fmt(pct);
+  document.getElementById('c-diff').textContent      = (up ? '+' : '') + fmt(diff);
+  document.getElementById('c-direction').textContent = up ? 'เพิ่มขึ้น' : 'ลดลง';
+  document.getElementById('c-detail').innerHTML      = `จาก <strong>${fmt(oldVal)}</strong> เป็น <strong>${fmt(newVal)}</strong>`;
+  show('res-change');
+}
+
+/* ── 5. กำไร/ขาดทุน ── */
+function calcProfit() {
+  const cost = parseFloat(document.getElementById('p-cost').value);
+  const sell = parseFloat(document.getElementById('p-sell').value);
+  if (!cost || !sell) { alert('กรุณากรอกข้อมูลให้ครบ'); return; }
+  const amount = sell - cost;
+  const pct    = (amount / cost) * 100;
+  const margin = (amount / sell) * 100;
+  const isProfit = amount >= 0;
+  document.getElementById('p-label').textContent        = isProfit ? 'กำไร' : 'ขาดทุน';
+  document.getElementById('p-pct').textContent          = fmt(Math.abs(pct));
+  document.getElementById('p-amount').textContent       = fmt(Math.abs(amount));
+  document.getElementById('p-amount-label').textContent = isProfit ? 'กำไร (บาท)' : 'ขาดทุน (บาท)';
+  document.getElementById('p-margin').textContent       = fmt(Math.abs(margin)) + '%';
+  document.getElementById('p-detail').innerHTML         = `ต้นทุน <strong>${fmt(cost)}</strong> บาท · ขาย <strong>${fmt(sell)}</strong> บาท`;
+  show('res-profit');
+}
+
+function show(id) {
+  const el = document.getElementById(id);
+  el.style.display = 'block';
+  requestAnimationFrame(() => el.scrollIntoView({ behavior:'smooth', block:'nearest' }));
+}
+
+/* ── Copy ── */
+function copyResult(type) {
+  let text = '';
+  if (type === 'discount') {
+    const price = document.getElementById('d-price').value;
+    const pct   = document.getElementById('d-pct').value;
+    text = `คิดส่วนลด\nราคาเต็ม ${price} บาท ลด ${pct}%\nราคาหลังลด ${document.getElementById('d-final').textContent} บาท\nประหยัด ${document.getElementById('d-saved').textContent} บาท`;
+  } else if (type === 'vat') {
+    text = `บวก VAT\nราคาก่อน VAT ${document.getElementById('v-before').textContent} บาท\nVAT ${document.getElementById('v-vatamt').textContent} บาท\nราคารวม ${document.getElementById('v-total').textContent} บาท`;
+  } else if (type === 'whatpct') {
+    text = `คำนวณเปอร์เซ็นต์\n${document.getElementById('w-detail').textContent}`;
+  } else if (type === 'change') {
+    text = `% การเปลี่ยนแปลง\n${document.getElementById('c-detail').textContent}\nเปลี่ยนไป ${document.getElementById('c-result').textContent}% (${document.getElementById('c-direction').textContent})`;
+  } else if (type === 'profit') {
+    text = `${document.getElementById('p-label').textContent}\n${document.getElementById('p-detail').textContent}\n${document.getElementById('p-label').textContent} ${document.getElementById('p-amount').textContent} บาท (${document.getElementById('p-pct').textContent}%)`;
+  }
+  text += '\nคำนวณได้ที่ kamnuanpercent.com';
+  navigator.clipboard.writeText(text).then(showToast).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta); showToast();
+  });
+}
+
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+</script>
+</body>
+</html>
