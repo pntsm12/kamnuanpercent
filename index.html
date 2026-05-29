@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="BcwokyN2W4FMCCIj4YbvGcFCJojtQgojttCnNHCTtL4">
-<title>คิดเปอร์เซ็นต์ออนไลน์ — ส่วนลด กำไร การเปลี่ยนแปลง</title>
-<meta name="description" content="คิดเปอร์เซ็นต์ออนไลน์ฟรี X คือกี่ % ของ Y คิดส่วนลด บวก VAT เปอร์เซ็นต์การเปลี่ยนแปลง คำนวณกำไรขาดทุน ใช้งานทันที">
+<title>คิดเปอร์เซ็นต์ออนไลน์ — A เป็นกี่ % กำไรขาดทุน การเปลี่ยนแปลง</title>
+<meta name="description" content="คิดเปอร์เซ็นต์ออนไลน์ฟรี คำนวณ A เป็นกี่ % ของ B หา X% ของตัวเลข เปอร์เซ็นต์การเปลี่ยนแปลง กำไรขาดทุน ใช้งานได้ทันที">
 <meta name="keywords" content="คิดเปอร์เซ็นต์, คำนวณเปอร์เซ็นต์, ส่วนลด, กำไร, เปอร์เซ็นต์การเปลี่ยนแปลง">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://pntsm12.github.io/kamnuanpercent/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="คิดเปอร์เซ็นต์ออนไลน์">
-<meta property="og:description" content="คิดเปอร์เซ็นต์ออนไลน์ฟรี ส่วนลด VAT กำไร เปอร์เซ็นต์การเปลี่ยนแปลง">
+<meta property="og:description" content="คิดเปอร์เซ็นต์ออนไลน์ฟรี A เป็นกี่ % ของ B กำไรขาดทุน การเปลี่ยนแปลง">
 <meta property="og:url" content="https://pntsm12.github.io/kamnuanpercent/">
 <meta property="og:locale" content="th_TH">
 <meta property="og:site_name" content="คำนวณ">
@@ -24,7 +24,7 @@
       "@type": "WebApplication",
       "name": "คิดเปอร์เซ็นต์ออนไลน์",
       "url": "https://pntsm12.github.io/kamnuanpercent/",
-      "description": "เครื่องมือคิดเปอร์เซ็นต์ออนไลน์ฟรี รองรับส่วนลด VAT กำไร และเปอร์เซ็นต์การเปลี่ยนแปลง",
+      "description": "เครื่องมือคิดเปอร์เซ็นต์ออนไลน์ฟรี รองรับ 4 สูตร A เป็นกี่ % ของ B หา X% กำไรขาดทุน การเปลี่ยนแปลง",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Any",
       "offers": {"@type":"Offer","price":"0","priceCurrency":"THB"},
@@ -36,8 +36,8 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "คิดเปอร์เซ็นต์ส่วนลดยังไง",
-          "acceptedAnswer": {"@type": "Answer", "text": "ราคาหลังลด = ราคาก่อนลด × (1 - ส่วนลด/100) เช่น สินค้าราคา 500 บาท ลด 20% จะได้ราคาหลังลด = 500 × 0.8 = 400 บาท ประหยัดไป 100 บาท"}
+          "name": "อยากคิดส่วนลดใช้เครื่องมือไหน",
+          "acceptedAnswer": {"@type": "Answer", "text": "ใช้เครื่องมือคิดส่วนลดโดยเฉพาะที่ kamnuansunlod รองรับลดหลายชั้น หาราคาเต็ม และคิดว่าลดกี่เปอร์เซ็นต์"}
         },
         {
           "@type": "Question",
@@ -52,7 +52,7 @@
         {
           "@type": "Question",
           "name": "Gross Margin กับ Markup ต่างกันอย่างไร",
-          "acceptedAnswer": {"@type": "Answer", "text": "Markup = กำไร/ต้นทุน × 100 วัดจากต้นทุน · Gross Margin = กำไร/ราคาขาย × 100 วัดจากรายได้ เช่น ต้นทุน 100 ขาย 125 → Markup = 25% แต่ Gross Margin = 20%"}
+          "acceptedAnswer": {"@type": "Answer", "text": "Markup = กำไร/ต้นทุน × 100 วัดจากต้นทุน Gross Margin = กำไร/ราคาขาย × 100 วัดจากรายได้ เช่น ต้นทุน 100 ขาย 125 → Markup = 25% แต่ Gross Margin = 20%"}
         }
       ]
     }
@@ -110,7 +110,7 @@ header{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:ce
 .page-hd p{margin-top:6px;font-size:14px;color:var(--t1);}
 
 /* Mode tabs */
-.mode-tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:14px;}
+.mode-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:14px;}
 .mode-tab{padding:8px 4px;border:1px solid var(--b0);border-radius:var(--r);background:var(--s0);font-family:'Sarabun',sans-serif;font-size:13px;font-weight:500;color:var(--t1);cursor:pointer;transition:all .15s;text-align:center;line-height:1.3;}
 .mode-tab:hover{border-color:var(--b1);color:var(--t0);}
 .mode-tab.on{background:var(--ink);border-color:var(--ink);color:var(--inv);}
@@ -211,17 +211,17 @@ footer a{color:var(--t2);text-decoration:none;}footer a:hover{color:var(--t1);}
 
 <main id="main-content" class="page">
   <div class="page-hd">
-    <h1>คิดเปอร์เซ็นต์ออนไลน์</h1>
-    <p>คำนวณเปอร์เซ็นต์ทุกรูปแบบ ส่วนลด กำไรขาดทุน การเปลี่ยนแปลง และอีกมาก ใช้งานได้ทันที</p>
+    <h1>คิดเปอร์เซ็นต์</h1>
+    <p>คำนวณเปอร์เซ็นต์ออนไลน์ฟรี รองรับ 4 สูตร ใช้งานได้ทันที</p>
   </div>
 
   <!-- Mode tabs -->
   <div class="mode-tabs" role="tablist" aria-label="ประเภทการคำนวณ">
-    <button class="mode-tab on" id="tab0" onclick="setMode(0)" role="tab" aria-selected="true" type="button">X คือกี่ %<br>ของ Y</button>
-    <button class="mode-tab" id="tab1" onclick="setMode(1)" role="tab" aria-selected="false" type="button">% ของ<br>จำนวน</button>
-    <button class="mode-tab" id="tab2" onclick="setMode(2)" role="tab" aria-selected="false" type="button">% การ<br>เปลี่ยนแปลง</button>
-    <button class="mode-tab" id="tab3" onclick="setMode(3)" role="tab" aria-selected="false" type="button">กำไร/<br>ขาดทุน</button>
-    <button class="mode-tab" id="tab4" onclick="setMode(4)" role="tab" aria-selected="false" type="button">ส่วนลด</button>
+    <button class="mode-tab on" id="tab0" onclick="setMode(0)" role="tab" aria-selected="true" type="button">A เป็นกี่ % ของ B</button>
+    <button class="mode-tab" id="tab1" onclick="setMode(1)" role="tab" aria-selected="false" type="button">X% ของตัวเลข</button>
+    <button class="mode-tab" id="tab2" onclick="setMode(2)" role="tab" aria-selected="false" type="button">เพิ่ม/ลดกี่ %</button>
+    <button class="mode-tab" id="tab3" onclick="setMode(3)" role="tab" aria-selected="false" type="button">กำไร/ขาดทุน %</button>
+    
   </div>
 
   <!-- Mode 0: X คือกี่ % ของ Y -->
@@ -303,30 +303,7 @@ footer a{color:var(--t2);text-decoration:none;}footer a:hover{color:var(--t1);}
     </div>
   </div>
 
-  <!-- Mode 4: ส่วนลด -->
-  <div id="m4" style="display:none">
-    <div class="card"><div class="card-body">
-      <div class="grid2">
-        <div class="field"><label class="lbl" for="d-price">ราคาก่อนลด (บาท)</label><div class="inp-row"><input type="number" id="d-price" placeholder="เช่น 500" inputmode="decimal"></div></div>
-        <div class="field"><label class="lbl" for="d-pct">ส่วนลด (%)</label><div class="inp-row"><input type="number" id="d-pct" placeholder="เช่น 20" inputmode="decimal"><div class="inp-suf" aria-hidden="true">%</div></div></div>
-      </div>
-      <button class="btn-calc" onclick="calcDiscount()" type="button">คำนวณ</button>
-    </div></div>
-    <div class="result-box" id="r4">
-      <div class="result-top">
-        <div class="result-lbl">ราคาหลังลด</div>
-        <div><span class="result-num" id="d-final">–</span><span class="result-unit">บาท</span></div>
-      </div>
-      <div class="result-body">
-        <div class="bd-row"><span class="bd-lbl">ราคาก่อนลด</span><span class="bd-val" id="d-price-show">–</span></div>
-        <div class="bd-row"><span class="bd-lbl">ส่วนลด</span><span class="bd-val" id="d-pct-show">–</span></div>
-        <div class="bd-row"><span class="bd-lbl">ประหยัดไป</span><span class="bd-val green" id="d-saved">–</span></div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- History -->
+    <!-- History -->
   <div class="hist-wrap">
     <div class="hist-head">
       <span class="hist-lbl">ประวัติการคำนวณ</span>
@@ -339,8 +316,8 @@ footer a{color:var(--t2);text-decoration:none;}footer a:hover{color:var(--t1);}
   <div class="faq-wrap">
     <h2 class="faq-h2">คำถามที่พบบ่อย</h2>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">คิดเปอร์เซ็นต์ส่วนลดยังไง?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="faq-a">ราคาหลังลด = ราคาก่อนลด × (1 − ส่วนลด/100) เช่น สินค้า 500 บาท ลด 20% = 500 × 0.8 = <strong>400 บาท</strong> ประหยัด 100 บาท</div>
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">อยากคิดส่วนลดใช้เครื่องมือไหน?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">ใช้เครื่องมือ <a href="/kamnuansunlod/" style="color:var(--t0);font-weight:600;text-decoration:underline;">คิดส่วนลด</a> ที่เราจัดทำไว้โดยเฉพาะ รองรับลดหลายชั้น หาราคาเต็ม คิดว่าลดกี่ % ครบกว่าเยอะ</div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">คิดเปอร์เซ็นต์กำไรยังไง?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
@@ -352,7 +329,7 @@ footer a{color:var(--t2);text-decoration:none;}footer a:hover{color:var(--t1);}
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">Gross Margin กับ Markup ต่างกันอย่างไร?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="faq-a"><strong>Markup</strong> = กำไร/ต้นทุน × 100 วัดจากต้นทุน · <strong>Gross Margin</strong> = กำไร/ราคาขาย × 100 วัดจากรายได้ เช่น ต้นทุน 100 ขาย 125 → Markup 25% แต่ Gross Margin 20%</div>
+      <div class="faq-a"><strong>Markup</strong> = กำไร/ต้นทุน × 100 วัดจากต้นทุน <strong>Gross Margin</strong> = กำไร/ราคาขาย × 100 วัดจากรายได้ เช่น ต้นทุน 100 ขาย 125 → Markup 25% แต่ Gross Margin 20%</div>
     </div>
   </div>
 
@@ -362,11 +339,11 @@ footer a{color:var(--t2);text-decoration:none;}footer a:hover{color:var(--t1);}
     <div class="related-grid">
       <a class="related-card" href="/kamnuansunlod/">
         <div class="related-ico"><svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
-        <span class="related-name">คิดส่วนลด (ละเอียด)</span>
+        <span class="related-name">คิดส่วนลด</span>
       </a>
       <a class="related-card" href="/kamnuanvat/">
         <div class="related-ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <span class="related-name">คำนวณ VAT (ละเอียด)</span>
+        <span class="related-name">คำนวณ VAT</span>
       </a>
       <a class="related-card" href="/kamnuanphasi/">
         <div class="related-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
@@ -381,7 +358,7 @@ footer a{color:var(--t2);text-decoration:none;}footer a:hover{color:var(--t1);}
 </main>
 
 <footer role="contentinfo">
-  <p>© 2569 คำนวณ · <a href="/">หน้าหลัก</a> · <a href="/privacy.html">นโยบายความเป็นส่วนตัว</a></p>
+  <p>© 2569 คำนวณ <a href="/">หน้าหลัก</a> <a href="/privacy.html">นโยบายความเป็นส่วนตัว</a></p>
 </footer>
 
 <script>
@@ -395,7 +372,7 @@ function fmt(n){return parseFloat(n.toPrecision(8)).toLocaleString('th-TH',{maxi
 let curMode=0;
 function setMode(m){
   curMode=m;
-  for(let i=0;i<5;i++){
+  for(let i=0;i<4;i++){
     document.getElementById('tab'+i).classList.toggle('on',i===m);
     document.getElementById('tab'+i).setAttribute('aria-selected',i===m?'true':'false');
     document.getElementById('m'+i).style.display=i===m?'block':'none';
@@ -412,7 +389,7 @@ function saveHist(result,detail){
 function renderHist(){
   const el=document.getElementById('histList');
   if(!hist.length){el.innerHTML='<div class="h-empty">ยังไม่มีประวัติ</div>';return;}
-  el.innerHTML=hist.slice(0,8).map(h=>`<div class="h-item"><div class="h-main">${h.result}</div><div class="h-sub">${h.detail} · ${h.t}</div></div>`).join('');
+  el.innerHTML=hist.slice(0,8).map(h=>`<div class="h-item"><div class="h-main">${h.result}</div><div class="h-sub">${h.detail} ${h.t}</div></div>`).join('');
 }
 function clearHist(){hist.length=0;localStorage.removeItem('pctHist');renderHist();}
 renderHist();
@@ -473,24 +450,11 @@ function calcProfit(){
   document.getElementById('p-amount').textContent=fmt(Math.abs(amt))+' บาท';
   document.getElementById('p-amount-label').textContent=isP?'กำไร (บาท)':'ขาดทุน (บาท)';
   document.getElementById('p-margin').textContent=fmt(Math.abs(margin))+'%';
-  document.getElementById('p-detail').innerHTML=`ต้นทุน <strong>${fmt(cost)}</strong> · ขาย <strong>${fmt(sell)}</strong>`;
+  document.getElementById('p-detail').innerHTML=`ต้นทุน <strong>${fmt(cost)}</strong> ขาย <strong>${fmt(sell)}</strong>`;
   saveHist(fmt(Math.abs(pct))+'%',isP?'กำไร':'ขาดทุน');
   showResult('r3');
 }
 
-function calcDiscount(){
-  const price=parseFloat(document.getElementById('d-price').value);
-  const pct=parseFloat(document.getElementById('d-pct').value);
-  if(!price||isNaN(pct)){alert('กรุณากรอกข้อมูลให้ครบ');return;}
-  const saved=price*pct/100;
-  const final=price-saved;
-  document.getElementById('d-final').textContent=fmt(final);
-  document.getElementById('d-price-show').textContent=fmt(price)+' บาท';
-  document.getElementById('d-pct-show').textContent=fmt(pct)+'%';
-  document.getElementById('d-saved').textContent=fmt(saved)+' บาท';
-  saveHist(fmt(final)+' บาท','ลด '+fmt(pct)+'% จาก '+fmt(price));
-  showResult('r4');
-}
 
 </script>
 </body>
