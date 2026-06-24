@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://kamnuan.net/kamnuanpercent/">
 <meta property="og:locale" content="th_TH">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"คิดเปอร์เซ็นต์","url":"https://kamnuan.net/kamnuanpercent/","description":"คำนวณเปอร์เซ็นต์ 4 สูตร ใช้งานได้ทันที","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"THB"},"inLanguage":"th"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"คิดเปอร์เซ็นต์กำไรยังไง","acceptedAnswer":{"@type":"Answer","text":"% กำไร = (ราคาขาย − ต้นทุน) ÷ ต้นทุน × 100 เช่น ต้นทุน 200 ขาย 250 กำไร 25%"}},{"@type":"Question","name":"ส่วนลด 20% จากราคา 500 บาท คือเท่าไหร่","acceptedAnswer":{"@type":"Answer","text":"20% ของ 500 = 100 บาท ราคาหลังลด = 400 บาท ใช้สูตร X% ของตัวเลข"}},{"@type":"Question","name":"เพิ่ม/ลดกี่ % ใช้ยังไง","acceptedAnswer":{"@type":"Answer","text":"กรอกค่าเดิมและค่าใหม่ เช่น เงินเดือนเดิม 20,000 ขึ้นเป็น 22,000 = เพิ่มขึ้น 10%"}}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"คิดเปอร์เซ็นต์","url":"https://kamnuan.net/kamnuanpercent/","description":"คำนวณเปอร์เซ็นต์ 4 สูตร ใช้งานได้ทันที","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"THB"},"inLanguage":"th"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"คิดส่วนลดใช้สูตรไหน","acceptedAnswer":{"@type":"Answer","text":"ใช้สูตร X% ของตัวเลข เช่น ลด 20% จากราคา 500 บาท กรอก 20% ของ 500 ได้ 100 บาท ราคาหลังลด เท่ากับ 400 บาท"}},{"@type":"Question","name":"คิดเปอร์เซ็นต์กำไรยังไง","acceptedAnswer":{"@type":"Answer","text":"% กำไร (Markup) เท่ากับ (ราคาขาย ลบ ต้นทุน) หาร ต้นทุน คูณ 100 เช่น ต้นทุน 200 ขาย 250 เท่ากับ 25%"}},{"@type":"Question","name":"Markup กับ Margin ต่างกันยังไง","acceptedAnswer":{"@type":"Answer","text":"Markup คิดจากต้นทุน เช่น กำไร 50 บาทจากต้นทุน 200 เท่ากับ 25% ส่วน Gross Margin คิดจากราคาขาย เช่น กำไร 50 บาทจากราคาขาย 250 เท่ากับ 20%"}},{"@type":"Question","name":"เงินเดือนขึ้น 10% จาก 20,000 ได้เท่าไหร่","acceptedAnswer":{"@type":"Answer","text":"ใช้สูตร X% ของตัวเลข กรอก 10% ของ 20,000 ได้ 2,000 บาท เงินเดือนใหม่เท่ากับ 22,000 บาท"}},{"@type":"Question","name":"ทำยอดขายได้ตามเป้ากี่เปอร์เซ็นต์","acceptedAnswer":{"@type":"Answer","text":"ใช้สูตรหา % จากตัวเลข เช่น ทำยอดขายได้จริง 150,000 บาท เป้าหมาย 100,000 บาท กรอก 150,000 จาก 100,000 ได้ 150% หมายถึงทำได้เกินเป้า 50%"}}]}]}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1063556443578237" crossorigin="anonymous"></script>
 <link rel="icon" href="favicon.ico">
@@ -84,6 +84,11 @@ header{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:ce
 .faq-a.open{max-height:400px;padding:14px;}
 .faq-a strong{color:#18181A;}
 
+.info-wrap{margin-top:28px;padding-top:24px;border-top:1px solid var(--b0);}
+.info-item{margin-bottom:16px;}
+.info-item:last-child{margin-bottom:0;}
+.info-title{font-size:14px;font-weight:600;color:#18181A;margin-bottom:6px;}
+.info-text{font-size:13px;color:#52504C;line-height:1.7;}
 .related-wrap{margin-top:28px;padding-top:24px;border-top:1px solid var(--b0);}
 .related-title{font-size:11px;font-weight:600;color:#96938C;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
 .related-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
@@ -95,6 +100,13 @@ header{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:ce
 footer{border-top:1px solid var(--b0);padding:20px 16px;text-align:center;font-size:12px;color:#96938C;line-height:2;}
 footer a{color:#96938C;text-decoration:none;}
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5RPQNBN2DZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5RPQNBN2DZ');
+</script>
 </head>
 <body>
 
@@ -222,6 +234,29 @@ footer a{color:#96938C;text-decoration:none;}
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">เงินเดือนขึ้น 10% จาก 20,000 ได้เท่าไหร่<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="faq-a">ใช้สูตร <strong>X% ของตัวเลข</strong> กรอก 10% ของ 20,000 ได้ 2,000 บาท เงินเดือนใหม่ = <strong>22,000 บาท</strong></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">ทำยอดขายได้ตามเป้ากี่เปอร์เซ็นต์<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">ใช้สูตร <strong>หา % จากตัวเลข</strong> เช่น ทำยอดขายได้จริง 150,000 บาท เป้าหมาย 100,000 บาท กรอก 150,000 จาก 100,000 ได้ <strong>150%</strong> หมายถึงทำได้เกินเป้า 50%</div>
+    </div>
+  </div>
+
+  <div class="info-wrap">
+    <div class="info-item">
+      <div class="info-title">หา % จากตัวเลข</div>
+      <div class="info-text">ใช้เมื่อรู้ตัวเลขสองค่าและต้องการรู้ว่าค่าหนึ่งคิดเป็นกี่เปอร์เซ็นต์ของอีกค่า เช่น ยอดขายเทียบกับเป้า หรือคะแนนสอบเทียบกับคะแนนเต็ม สูตรคือ (A หาร B) คูณ 100</div>
+    </div>
+    <div class="info-item">
+      <div class="info-title">คิด % ของจำนวน</div>
+      <div class="info-text">ใช้เมื่อรู้เปอร์เซ็นต์และต้องการหาว่าคิดเป็นจำนวนเท่าไหร่ เช่น ส่วนลด ค่าคอมมิชชั่น หรือดอกเบี้ย สูตรคือ (เปอร์เซ็นต์ หาร 100) คูณ จำนวนเต็ม</div>
+    </div>
+    <div class="info-item">
+      <div class="info-title">เพิ่ม/ลดกี่ %</div>
+      <div class="info-text">ใช้เมื่อมีค่าเดิมและค่าใหม่ ต้องการรู้ว่าเปลี่ยนแปลงไปกี่เปอร์เซ็นต์ เช่น เงินเดือนขึ้น ราคาสินค้าเปลี่ยน หรือยอดขายเทียบเดือนก่อน สูตรคือ ((ค่าใหม่ ลบ ค่าเดิม) หาร ค่าเดิม) คูณ 100</div>
+    </div>
+    <div class="info-item">
+      <div class="info-title">กำไร/ขาดทุน %</div>
+      <div class="info-text">มีสองมุมที่มักสับสน: <strong>Markup</strong> คิดเปอร์เซ็นต์กำไรจากต้นทุน ใช้ตั้งราคาขาย ส่วน <strong>Gross Margin</strong> คิดเปอร์เซ็นต์กำไรจากราคาขาย ใช้วัดความสามารถในการทำกำไรของธุรกิจ ตัวเลขสองอันนี้ต่างกันเสมอแม้กำไรเท่ากัน</div>
     </div>
   </div>
 
